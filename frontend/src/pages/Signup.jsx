@@ -7,11 +7,11 @@ const Signup = () => {
   const [password,setPassword] = useState('')
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
+    e.preventDefault()   //calling function
     try {
      const response = await axios.post('http://localhost:5000/api/auth/register',
       { name, email, password }
-      );
+      ); 
       console.log(response)
     } catch(error) {
       console.log(error)
@@ -23,7 +23,7 @@ const Signup = () => {
     <div className="flex justify-center min-h-screen bg-gray-100">
     <div className="border shadow p-6 w-80 bg-wgite">
       <h2 className="text-2xl font-bold mb-4">SignUp</h2>
-      <form>
+      <form onSubmit={handleSubmit}>
 
         <div className="mb-4">
           <label className="block text-gray-700">Name</label>
