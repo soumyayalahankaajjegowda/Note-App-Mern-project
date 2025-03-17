@@ -2,28 +2,26 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
+const router = require("./router/router");
 
 //Inititating Express
 const app = express();
 
 //Environment Variables
-requirw("dotenv").config();
+require("dotenv").config();
 
 //connecting to Database
 mongoose
- .connect(process.env.dbURL, {
-  useNewUrIParser: true,
-  useUnifiedTopology: true,
- })
+ .connect(process.env.MONGO_URL)
 .then((result) =>
   app.listen(process.env.PORT || 3000, () => {
-    console.log("Connection to the Database was wstablished!");
+    console.log("Connection to the Database was established!");
   })
 )
- .catch((error) => console.log(error));
+ .catch((error) =>{console.log(error)});
 
  //Middlewares
- app.use(expree.json()); //JSON parser
+ app.use(express.json()); //JSON parser
  app.use(express.urlencoded({ extended: true })); //URL Body parser
 
  //CORS

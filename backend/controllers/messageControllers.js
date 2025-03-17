@@ -1,19 +1,19 @@
 //import Model
-const Message = require ("../models/message");
+const Message = require("../models/message");
 
 //controllers
 
 
-//To submit message through contact form
+// To submit message through contact form
 const submit_feedback = (req, res) => {
-  let message = new Message(req, body);
+  let message = new Message(req.body);
   message
-  .save()
-  .then((result) => {
-    res.json({msg: error.message });
-  })
-  .catch((error) => res.json({msg: error.message }));
+    .save()
+    .then((result) => {
+      res.json({ msg: "Thank you for your feedback!" });
+    })
+    .catch((error) => res.json({ msg: error.message }));
 };
 
-//Exports
+// Exports
 module.exports = { submit_feedback };

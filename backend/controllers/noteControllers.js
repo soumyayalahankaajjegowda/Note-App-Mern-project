@@ -36,7 +36,7 @@ const add_note = (req, res) => {
 //To retrive a singlw note by its ID
 const get_one_note = (req, res) => {
   const id = req.params.id;
-  Note.findBy(id)
+  Note.findById(id)
   .then((result) => {
     if (result !=null) {
       res.json({
@@ -53,16 +53,30 @@ const get_one_note = (req, res) => {
     //To edit an existing note
     const update_note = (req, res)=> {
       const id = req.params.id;
-      Note.findByIdAndDelete(id)
+      Note.findByIdAndUpdate(id)
       .then((result) => {
         if (result != null) {
-          res.json({msg: "This note was successfully deleted!" });
+          res.json({ msg: "The note was updated successfully!", content: result, });
         } else {
-          res,json({ msg: "This note dosen't exist!"});
+          res.json({ msg: "This note dosen't exist!"});
         }
       })
       .catch((error) => res.json({ msg: error.message }));
     };
+
+    // To delete a note from the database
+     const delete_note = (req, res) => {
+     const id = req.params.id;
+     Note.findByIdAndDelete(id)
+    .then((result) => {
+      if (result != null) {
+        res.json({ msg: "The note was successfully deleted!" });
+      } else {
+        res.json({ msg: "This note doesn't exist!" });
+      }
+    })
+    .catch((error) => res.json({ msg: error.message }));
+};
 
     //Exports
     module.exports = {

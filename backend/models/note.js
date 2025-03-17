@@ -7,7 +7,7 @@ const noteSchema = new Schema(
       type: String,
       required: true,
     },
-    detalis: {
+    details: {
       type: String,
       required: true,
    },
@@ -15,5 +15,5 @@ const noteSchema = new Schema(
   { timestamps: true }
 );
 
-const Note = mongoose.nodel("StickyNote", noteSchema);
+const Note = mongoose.model("StickyNote", noteSchema);
 module.exports = Note;
