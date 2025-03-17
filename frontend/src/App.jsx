@@ -7,7 +7,7 @@ function App() {
     <Router>
       <Head />
       <Routes>
-         <Route path={""}/>
+         <Route path={"/add"} element={<AddForm/>}/>
       </Routes>
     </Router>
   </>
