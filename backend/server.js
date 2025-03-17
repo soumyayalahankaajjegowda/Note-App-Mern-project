@@ -1,17 +1,39 @@
-import express from 'express'
-import cors from 'cors'
-import connectToMongoDB from './database/db.js'
-import authRouter from './routes/auth.js'
+//importing Modules
+const express = require("express");
+const mongoose = require("mongoose");
+const cors = require("cors");
 
+//Inititating Express
+const app = express();
 
+//Environment Variables
+requirw("dotenv").config();
 
-const app = express()
-app.use(cors())
-app.use(express.json)
-app.use('/api/auth', authRouter)// will find register
+//connecting to Database
+mongoose
+ .connect(process.env.dbURL, {
+  useNewUrIParser: true,
+  useUnifiedTopology: true,
+ })
+.then((result) =>
+  app.listen(process.env.PORT || 3000, () => {
+    console.log("Connection to the Database was wstablished!");
+  })
+)
+ .catch((error) => console.log(error));
 
-//start server
-app.listen(5000, () => {
-  connectToMongoDB()
-  console.log("server is running")
-})
+ //Middlewares
+ app.use(expree.json()); //JSON parser
+ app.use(express.urlencoded({ extended: true })); //URL Body parser
+
+ //CORS
+ app.use(
+  cors({
+    origin: "*",
+    //credentials: true,
+  })
+ );
+
+ //Routes
+ const routes = require("./router/router");
+ app.use(routes);

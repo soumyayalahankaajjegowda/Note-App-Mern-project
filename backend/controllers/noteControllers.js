@@ -54,7 +54,7 @@ const get_one_note = (req, res) => {
     const update_note = (req, res)=> {
       const id = req.params.id;
       Note.findByIdAndDelete(id)
-      .then((result => {
+      .then((result) => {
         if (result != null) {
           res.json({msg: "This note was successfully deleted!" });
         } else {
