@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import DetailCard from "../components/DetailCard";
 
-export default function NoteDetails () {
+export default function NoteDetails() {
   const { id } = useParams();
   const [note, setNote] = useState({
     id: "",
@@ -12,15 +12,15 @@ export default function NoteDetails () {
   });
   useEffect(() => {
     axios
-      .get(`http://mern-notes-backend-5z2j.onrender.com/noteDetails/${id}`)
+      .get(`http://localhost:3000/noteDetails/${id}`)
       .then((res) => {
         setNote(res.data.content);
       })
-    .catch((err) => console.log(err));
-}, [id]);
-return (
-<div className="container">
-    <DetailCard note={note} />
-</div>
-);
+      .catch((err) => console.log(err));
+  }, [id]);
+  return (
+    <div className="container">
+      <DetailCard note={note} />
+    </div>
+  );
 }
