@@ -7,6 +7,7 @@ function App() {
     <Router>
       <Head />
       <Routes>
+          <Route path={"/"} element={<Home />} />
          <Route path={"/add"} element={<AddForm/>}/>
       </Routes>
     </Router>
