@@ -10,9 +10,7 @@ export default function Head() {
         <div className="logo">
             <Link to={'/'} style={linkStyle}><h2>Note App</h2></Link>
         </div>
-        <div className="action">
-            <button>Logout</button>
-        </div>
+       
     </nav>
   )
 }

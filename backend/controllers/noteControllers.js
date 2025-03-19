@@ -53,7 +53,7 @@ const get_one_note = (req, res) => {
     //To edit an existing note
     const update_note = (req, res)=> {
       const id = req.params.id;
-      Note.findByIdAndUpdate(id)
+      Note.findByIdAndUpdate(id, req.body)
       .then((result) => {
         if (result != null) {
           res.json({ msg: "The note was updated successfully!", content: result, });

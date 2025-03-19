@@ -53,7 +53,7 @@ export default function AddForm() {
                     rows="5"
                     defaultValue={note.details}
                     onChange={changeHandler}
-                    placeholder="Descride Your Note ..."
+                    placeholder="Describe Your Note ..."
                     required
                 ></textarea>
                 <button type="submit" onClick={submitHandler}>Save Note</button>
