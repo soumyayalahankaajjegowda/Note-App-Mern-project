@@ -4,7 +4,7 @@ A simple MERN (MongoDB, Express.js, React, Node.js) notes app for managing notes
 
 ## Introduction
 
-This MERN Notes App is designed to help you manage and organize  notes efficiently. It uses a modern tech stack to provide a seamless user experience.
+This MERN Notes App is designed to help you manage and organize notes efficiently. It uses a modern tech stack to provide a seamless user experience.
 
 ## Packages Installed:
 
@@ -31,5 +31,6 @@ npm install axios eslint-plugin-react react react-dom react-icons react-router-d
 
 yarn add -D @eslint/js @types/react @types/react-dom @vitejs/plugin-react eslint eslint-plugin-react-hooks eslint-plugin-react-refresh globals vite
 
+## Frontend Deploy Link
 
-
+https://note-app-mern-project-1.onrender.com/
