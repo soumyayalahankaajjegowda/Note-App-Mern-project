@@ -17,7 +17,7 @@ export default function Home() {
   useEffect(() => {
     const fetchNotes = () => {
       axios
-        .get("${import.meta.env.VITE_API}/allNotes")
+        .get(`${import.meta.env.VITE_API}/allNotes`)
         .then((res) => {
           if (res.data.content) {
             setNotes(res.data.content);
