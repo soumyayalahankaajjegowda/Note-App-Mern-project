@@ -22,7 +22,7 @@ mongoose
 
  //Middlewares
  app.use(express.json()); //JSON parser
- app.use(express.urlencoded({ extended: true })); //URL Body parser
+ //app.use(express.urlencoded({ extended: true })); //URL Body parser
 
  //CORS
  app.use(
