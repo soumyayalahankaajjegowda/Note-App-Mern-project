@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import DetailCard from "../components/DetailCard";
+import DetailCard from "../components/DeleteCard";
 
 export default function NoteDetails() {
   const { id } = useParams();
@@ -12,7 +12,7 @@ export default function NoteDetails() {
   });
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/noteDetails/${id}`)
+      .get(`${import.meta.env.VITE_API}/noteDetails/${id}`)
       .then((res) => {
         setNote(res.data.content);
       })

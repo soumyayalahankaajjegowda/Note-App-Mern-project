@@ -1,4 +1,4 @@
-import Head from "./components/Head";
+import Head from "./components/HeaderLogo";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import AddForm from "./pages/AddForm";

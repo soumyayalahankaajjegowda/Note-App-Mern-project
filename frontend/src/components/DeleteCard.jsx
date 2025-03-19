@@ -28,7 +28,7 @@ export default function DetailCard({ note }) {
         }).then((result) => {
             if (result.isConfirmed) {
                 axios
-                    .delete(`http://localhost:3000/deleteNote/${note._id}`)
+                    .delete(`${import.meta.env.VITE_API}/deleteNote/${note._id}`)
                     .then(() => {
                         navigate("/");
                         Swal.fire(
